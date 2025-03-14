@@ -15,5 +15,5 @@ A responsive Weather Forecast application built using **HTML, CSS, and JavaScrip
 ## Installation 🔧
 1. **Clone the repository:**
    ```sh
-   git clone <your-forked-repo-url>
+   https://github.com/Rivarora/Weather_App_scm.git
 
