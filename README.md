@@ -84,7 +84,7 @@
 
   <hr style="border: 1px solid #3498db; width: 80%;">
 
-  <h2 style="color: #e74c3c;">📄 License</h2>
-  <p>Licensed under the <b>
+  
+  
 
 
