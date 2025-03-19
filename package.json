@@ -1,0 +1,27 @@
+{
+  "name": "weather_app_scm",
+  "version": "1.0.0",
+  "description": "<div align=\"center\" style=\"font-family: Arial, sans-serif; line-height: 1.6; color: #333;\">",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rivarora/Weather_App_scm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rivarora/Weather_App_scm/issues"
+  },
+  "homepage": "https://github.com/Rivarora/Weather_App_scm#readme",
+  "dependencies": {
+    "react-dom": "^19.0.0",
+    "react-scripts": "^5.0.1"
+  }
+}
