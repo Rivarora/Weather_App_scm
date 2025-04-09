@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Vibes - Time Greeting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to right, #83a4d4, #b6fbff);
+      background-size: cover;
+      background-position: center;
+      transition: background 1s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .weather-container {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      padding: 40px;
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1.5s ease;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .greeting-text {
+      font-size: 1.4rem;
+      color: #334155;
+      margin-bottom: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .datetime {
+      color: #333;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+
+    .search-box input {
+      padding: 12px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      width: 60%;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .search-box button {
+      padding: 12px 20px;
+      background-color: #0284c7;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .search-box button:hover {
+      background-color: #0369a1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="weather-container">
+      <h1 class="title">🌦 Weather Vibes</h1>
+      <p id="greeting" class="greeting-text">Hello!</p>
+      <p id="datetime" class="datetime"></p>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Enter city or PIN code">
+        <button onclick="alert('Weather search coming soon!')">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Greeting logic
+    function setTimeGreeting() {
+      const hour = new Date().getHours();
+      let greeting = "Hello";
+
+      if (hour >= 5 && hour < 12) {
+        greeting = "Good morning 🌞";
+      } else if (hour >= 12 && hour < 17) {
+        greeting = "Good afternoon ☀️";
+      } else if (hour >= 17 && hour < 21) {
+        greeting = "Good evening 🌆";
+      } else {
+        greeting = "Good night 🌙";
+      }
+
+      document.getElementById("greeting").textContent = greeting;
+    }
+
+    // Clock logic
+    function updateDateTime() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString();
+      const dateString = now.toLocaleDateString(undefined, {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+      });
+      document.getElementById("datetime").textContent = `${dateString} – ${timeString}`;
+    }
+
+    // Run on load
+    setTimeGreeting();
+    updateDateTime();
+    setInterval(updateDateTime, 1000); // Optional: live clock
+  </script>
+</body>
+</html>
+
