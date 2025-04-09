@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real-Time Date & Time</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea, #764ba2); /* Colorful background */
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .clock-container {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      backdrop-filter: blur(10px); /* Adds glass effect */
+    }
+
+    .time {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 1.5rem;
+      color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock-container">
+    <div class="time" id="time">--:--:--</div>
+    <div class="date" id="date">Loading...</div>
+  </div>
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+
+      const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = now.toLocaleDateString(undefined, optionsDate);
+
+      const formattedTime = now.toLocaleTimeString();
+
+      document.getElementById('time').textContent = formattedTime;
+      document.getElementById('date').textContent = formattedDate;
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime(); // Initial call
+  </script>
+</body>
+</html>
