@@ -1,1 +1,74 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .weather-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .weather-card h2 {
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    .weather-card .temp {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #0077b6;
+      margin: 1rem 0;
+    }
+
+    .weather-card .condition {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .weather-card .location {
+      font-size: 1rem;
+      color: #888;
+    }
+
+    .weather-icon {
+      font-size: 4rem;
+      color: #00b4d8;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="weather-card">
+    <div class="weather-icon">🌤️</div>
+    <h2>Monday</h2>
+    <div class="temp">24°C</div>
+    <div class="condition">Partly Cloudy</div>
+    <div class="location">Paris, France</div>
+  </div>
+
+</body>
+</html>
